@@ -8,6 +8,8 @@ f = open('poly_per_z.json')
 data = json.load(f)
 
 polygons = []
+z_ids = []
+cell_ids = []
 
 # Function that removes every second comma in the coordinates
 def removeCommas(s):
@@ -20,11 +22,11 @@ def removeCommas(s):
     return s
 
 
-for i in tqdm(range(0,9)): # Go through each layer
-    for j in range(len(data[i]['geometries'])): # Go through every cell there
+for i in tqdm(range(1, 10)): # Go through each layer
+    for j in range(1, len(data[i-1]['geometries'])+1): # Go through every cell there
 
         # Pull out just the coordinates comprising the boundary
-        coordinates = str(data[i]['geometries'][j]['coordinates'][0])
+        coordinates = str(data[i-1]['geometries'][j-1]['coordinates'][0])
 
         # Get rid of unnecesary brackets
         for char in ["[", "]"]:
@@ -38,9 +40,14 @@ for i in tqdm(range(0,9)): # Go through each layer
 
         # Append to running list of polygons
         polygons.append(coordinates)
+        z_ids.append(i)
+        cell_ids.append(j)
 
 print(len(polygons)) # Check that we've got all of them...
 
 # Move stuff into dataframe and save as csv!
-df = pandas.DataFrame({'polygons':polygons})
+df = pandas.DataFrame({'z': z_ids,
+                       'cell': cell_ids,
+                       'polygons':polygons},
+                       index=None)
 df.to_csv('baysor_SQL_polygons.csv')
