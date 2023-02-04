@@ -3,8 +3,11 @@ import json
 import math
 from tqdm import tqdm
 
+# Edit this so the code knows where your json file is!
+JSON_PATHNAME = '/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/poly_per_z.json'
+
 # Open the json file and parse it as json
-f = open('poly_per_z.json')
+f = open(JSON_PATHNAME)
 data = json.load(f)
 
 polygons = []
@@ -22,11 +25,11 @@ def removeCommas(s):
     return s
 
 
-for i in tqdm(range(1, 10)): # Go through each layer
-    for j in range(1, len(data[i-1]['geometries'])+1): # Go through every cell there
+for layer in tqdm(range(0, 9)): # Go through each layer
+    for id in range(0, len(data[layer]['geometries'])): # Go through every cell there
 
         # Pull out just the coordinates comprising the boundary
-        coordinates = str(data[i-1]['geometries'][j-1]['coordinates'][0])
+        coordinates = str([[int(val[0]), int(val[1])] for val in data[layer]['geometries'][id]['coordinates'][0]])
 
         # Get rid of unnecesary brackets
         for char in ["[", "]"]:
@@ -40,8 +43,8 @@ for i in tqdm(range(1, 10)): # Go through each layer
 
         # Append to running list of polygons
         polygons.append(coordinates)
-        z_ids.append(i)
-        cell_ids.append(j)
+        z_ids.append(layer+1)
+        cell_ids.append(id+1)
 
 print(len(polygons)) # Check that we've got all of them...
 
