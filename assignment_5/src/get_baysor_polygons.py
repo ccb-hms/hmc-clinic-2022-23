@@ -5,6 +5,7 @@ from tqdm import tqdm
 
 # Edit this so the code knows where your json file is!
 JSON_PATHNAME = '/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/poly_per_z.json'
+#"C:/Users/elflu/OneDrive/Desktop/clinic/data_release_baysor_merfish_gut/data_analysis/baysor/segmentation/poly_per_z.json"
 
 # Open the json file and parse it as json
 f = open(JSON_PATHNAME)
