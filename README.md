@@ -46,7 +46,7 @@ This is the repository for the 2022-2023 Harvey Mudd Clinic Team in collaboratio
 
 ## Description <a name="description"></a>
 
-An in-depth paragraph about your project and overview of use.
+At Harvard CCB, researchers are pioneering the study of various biological and spatial genomic datasets using computational methods. These high-resolution biological datasets collected using imaging techniques can be quite large. Most workflows involve mainly Python and R, which cannot be effectively used to analyze such memory-intensive datasets. We aim to leverage relational database queries in SQL to improve scalability, add flexibility to analyze larger datasets, and eventually find additional underlying spatial relationships in the original data. 
 
 ## Getting Started <a name="starting"></a>
 
