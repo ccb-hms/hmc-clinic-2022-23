@@ -4,55 +4,51 @@ This is the repository for the 2022-2023 Harvey Mudd Clinic Team in collaboratio
 
 ## Table of Contents
 
-1. [Description](#description)
-2. Getting Started
-
-    a. Dependencies
-3. [Assignment 1](#assignment1)
-
-    a. Description
-    
-    b. Coursera
-    
-    c. Note: Running lab assignments in SQL Server
-4. Assignment 2
-
-    a. Description
-
-    b. Installation
-
-    c. etc
-5. Assignment 3
-
-    a. Description
-  
-    b. Installation
-  
-    c. etc
-6. Assignment 4
-
-    a. Description
-  
-    b. Installation
-  
-    c. etc
-7. Assignment 5
-
-    a. Description
-  
-    b. Installation
-  
-    c. etc
-8. Authors
-9. Acknowledgments
-
-
+<ol>
+<li> <a href="#description">Description</a> </li>
+<li> <a href="#starting">Getting Started</a> </li>
+	<ol type="a">
+	<li>Dependencies</li>
+</ol>
+<li> <a href="#assignment1">Assignment 1</a> </li>
+	<ol type="a">
+	<li>Description</li>
+	<li>Coursera</li>
+	<li>Note: Running lab assignments in SQL Server</li>
+	</ol>
+<li> <a href="#assignment2">Assignment 2</a> </li>
+	<ol type="a">
+	<li>Description</li>
+	<li>Installation</li>
+	<li>etc</li>
+	</ol>
+<li> <a href="#assignment3">Assignment 3</a> </li>
+	<ol type="a">
+	<li>Description</li>
+	<li>Installation</li>
+	<li>etc</li>
+	</ol>
+<li> <a href="#assignment4">Assignment 4</a> </li>
+	<ol type="a">
+	<li>Description</li>
+	<li>Installation</li>
+	<li>etc</li>
+	</ol>
+<li> <a href="#assignment5">Assignment 5</a> </li>
+	<ol type="a">
+	<li>Description</li>
+	<li>Installation</li>
+	<li>etc</li>
+	</ol>
+<li> <a href="#authors">Authors</a> </li>
+<li> <a href="#acknowledgements">Acknowledgements</a> </li>
+</ol>
 
 ## Description <a name="description"></a>
 
 An in-depth paragraph about your project and overview of use.
 
-## Getting Started
+## Getting Started <a name="starting"></a>
 
 ### Dependencies
 
@@ -111,7 +107,7 @@ Explore the ADS UI  to view table structure, etc. as they do in the IBM tool in 
  
 
 
-## Assignment 2
+## Assignment 2 <a name="assignment2"></a>
 
 ### Description
 
@@ -132,7 +128,7 @@ Any advice for common problems or issues.
 command to run if program contains helper info
 ```
 
-## Assignment 3
+## Assignment 3 <a name="assignment3"></a>
 
 ### Description
 
@@ -153,7 +149,7 @@ Any advice for common problems or issues.
 command to run if program contains helper info
 ```
 
-## Assignment 4
+## Assignment 4 <a name="assignment4"></a>
 
 ### Description
 
@@ -174,7 +170,7 @@ Any advice for common problems or issues.
 command to run if program contains helper info
 ```
 
-## Assignment 5
+## Assignment 5 <a name="assignment5"></a>
 
 ### Description
 
@@ -231,7 +227,7 @@ SQL script
 * visualize_cells.py
 
 
-### Assignment 5: Spatial overlap operations for gene expression quantification
+### Assignment 5: Spatial overlap operations for gene expression quantification 
 
 1. Obtain the dataset from [datadryad](https://doi.org/10.5061/dryad.jm63xsjb2) and inspect the contents of the data release. Use the contained README for an orientation. There are two relevant parts here for us in the beginning: 1) the molecule data table in raw_data /molecules.csv, and 2) the cell polygon coordinates from the Baysor segmentation in data_analysis/baysor/segmentation/poly_per_z.json.
 
@@ -251,14 +247,14 @@ SQL script
 code blocks for commands
 ```
 
-### Help
+### Help 
 
 Any advice for common problems or issues.
 ```
 command to run if program contains helper info
 ```
 
-## Authors
+## Authors <a name="authors"></a>
 
 [Chris Couto](https://github.com/cgcouto)
 
@@ -269,6 +265,8 @@ command to run if program contains helper info
 [Mads Mansfield](https://github.com/Paruhdoks)
 
 
-## Acknowledgments
+## Acknowledgments <a name="acknowledgements"></a>
+
+
 
 
