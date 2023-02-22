@@ -1,17 +1,60 @@
 # Leveraging Relational Databases for Spatial Transcriptomics
 
-This is the repository for the Harvey Mudd Clinic Team in collaboration with Harvard Center for Computational Biomedicine.
+This is the repository for the 2022-2023 Harvey Mudd Clinic Team in collaboration with Harvard Center for Computational Biomedicine.
 
-## Description
+## Table of Contents
+
+1. [Description](#description)
+2. Getting Started
+
+    a. Dependencies
+3. [Assignment 1](#assignment1)
+
+    a. Description
+    
+    b. Coursera
+    
+    c. Note: Running lab assignments in SQL Server
+4. Assignment 2
+
+    a. Description
+
+    b. Installation
+
+    c. etc
+5. Assignment 3
+
+    a. Description
+  
+    b. Installation
+  
+    c. etc
+6. Assignment 4
+
+    a. Description
+  
+    b. Installation
+  
+    c. etc
+7. Assignment 5
+
+    a. Description
+  
+    b. Installation
+  
+    c. etc
+8. Authors
+9. Acknowledgments
+
+
+
+## Description <a name="description"></a>
 
 An in-depth paragraph about your project and overview of use.
 
 ## Getting Started
 
 ### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
 
 * Python
 * Some Python packages:
@@ -21,7 +64,7 @@ An in-depth paragraph about your project and overview of use.
 * Git
 * Docker
 
-## Assignment 1
+## Assignment 1 <a name="assignment1"></a>
 
 ### Description
 
