@@ -3,7 +3,6 @@
 This is the repository for the 2022-2023 Harvey Mudd Clinic Team in collaboration with Harvard Center for Computational Biomedicine.
 
 ## Table of Contents
-
 <ol>
 <li> <a href="#description">Description</a> </li>
 <li> <a href="#starting">Getting Started</a> </li>
@@ -52,6 +51,8 @@ At Harvard CCB, researchers are pioneering the study of various biological and s
 
 ### Dependencies
 
+To run our scripts and follow along with our process, you'll need to have the following installed.
+
 * Python
 * Some Python packages:
   * pandas
@@ -78,7 +79,7 @@ We completed the following parts of the Coursera course:
 * **Week 2**
 	* All videos in both modules
 	* Lab assignments (one in each module)
-		* See note below on running lab assignments in SQL Server
+		* See [note](#labAssign) below on running lab assignments in SQL Server
 		* The second lab introduces primary and foreign keys, but for some reason stops short of having you implement a JOIN. See [this introduction to SQL joins](https://www.datacamp.com/tutorial/introduction-to-sql-joins) (ignore the first section on setting up PostgreSQL) And figure out how to join the tables that you ended up with at the end of the second lab based on their primary and foreign keys.
 * **Week 3**
 	* Videos:
@@ -90,7 +91,7 @@ We completed the following parts of the Coursera course:
 	* Videos:
 		* “Approach to Database Design (Including ERD)”
 
-### Note: Running lab assignments in SQL Server
+### Running lab assignments in SQL Server <a name="labAssign"></a>
 
 Run the lab assignments in SQL Server in Docker instead of on IBM’s cloud platform. Follow [these instructions](https://www.sqlshack.com/how-to-set-up-and-run-sql-server-docker-image/) to get set up with SQL Server and Azure Data Studio. The SQL scripts in the labs should work in SQL Server, but you will need to add this to the top of the first script to create a new database called MyLabProject and use it for subsequent operations: 
 ```
@@ -266,7 +267,5 @@ command to run if program contains helper info
 
 
 ## Acknowledgments <a name="acknowledgements"></a>
-
-
 
 
