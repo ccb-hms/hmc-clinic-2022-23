@@ -24,20 +24,22 @@ This is the repository for the 2022-2023 Harvey Mudd Clinic Team in collaboratio
 <li> <a href="#assignment3">Assignment 3</a> </li>
 	<ol type="a">
 	<li>Description</li>
-	<li>Installation</li>
-	<li>etc</li>
+	<li>Tasks</li>
 	</ol>
 <li> <a href="#assignment4">Assignment 4</a> </li>
 	<ol type="a">
-	<li>Description</li>
-	<li>Installation</li>
-	<li>etc</li>
+	<li>Setup</li>
+	<li>Data</li>
+	<li>Exercises</li>
 	</ol>
 <li> <a href="#assignment5">Assignment 5</a> </li>
 	<ol type="a">
 	<li>Description</li>
+	<li>Anatomy of the MERFISH mouse ileum dataset</li>
 	<li>Installation</li>
-	<li>etc</li>
+	<li>Scripts</li>
+	<li>Tasks</li>
+	<li>Execution</li>
 	</ol>
 <li> <a href="#authors">Authors</a> </li>
 <li> <a href="#acknowledgements">Acknowledgements</a> </li>
@@ -396,7 +398,7 @@ Samples in this dataset were stained with anti-Na+/K+-ATPase primary antibodies,
 </ul>
 </ul>
 
-### Installing
+### Installation
 
 The dataset can be obtained from the official [datadryad data publication](https://doi.org/10.5061/dryad.jm63xsjb2).
 
@@ -435,7 +437,7 @@ SQL script for parsing the imported Molecules table (with points represented as 
 Python script that uses `poly_per_z.json` to draw plots of cell polygons from the Baysor segmentation
 
 
-### Assignment 5: Spatial overlap operations for gene expression quantification 
+### Tasks 
 
 Note: This section is adapted from the assignments provided to us by the Harvard CCB liaison team.
 
@@ -449,7 +451,7 @@ Note: This section is adapted from the assignments provided to us by the Harvard
 
 5. We proceed by inspecting the molecule to cell assignment for the Baysor segmentation in data_analysis/baysor/segmentation/segmentation.csv. One issue with the polygon coordinates in the json file is that there is no 1:1 mapping between these polygons and the cell metadata. We therefore aim to reconstruct the cell boundaries by computing [convex hulls](https://learn.microsoft.com/en-us/sql/t-sql/spatial-geometry/stconvexhull-geometry-data-type?view=sql-server-ver16) around all molecules assigned to a cell. As before: record the average execution time of your queries to produce a table of convex hull geometries for each of the 5800 cells in the segmentation csv file. 
 
-### Executing program
+### Execution
 
 To run our code for this assignment, follow along in our [Notebook](https://github.com/kunyanglu/harvard-ccb-hmc-clinic/blob/main/assignment_5/Notebooks/Assignment5NotebookSummarized.ipynb)
 
@@ -487,5 +489,3 @@ Nathan Palmer
 Sunil Poudel
 
 Sam Pullman
-
-
