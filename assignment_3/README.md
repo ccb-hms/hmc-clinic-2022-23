@@ -1,5 +1,5 @@
 ## Assignment 3 <a name="assignment3"></a>
-Contents
+**Contents**
 	<ol>
 	<li>Description</li>
 	<li>Tasks</li>
