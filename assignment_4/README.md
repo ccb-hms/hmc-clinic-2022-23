@@ -12,8 +12,7 @@ Note: This section is adapted from the assignments provided to us by the Harvard
   
 ## Background <a name="background"></a>
 
-Here we will be analyzing [NOAA's Integrated Surface Database]
-(https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database).
+Here we will be analyzing [NOAA's Integrated Surface Database](https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database).
  
 The Integrated Surface Database (often abbreviated to ISD) is a large collection of hourly and sub-hourly weather observations collected from around the world. The result is a large database of weather information in a consistent, text-based format. There are multiple ISD datasets available spawithin the ISD product set.
 
