@@ -1,5 +1,10 @@
 ## Assignment 3 <a name="assignment3"></a>
-
+Contents
+	<ol type="a">
+	<li>Description</li>
+	<li>Tasks</li>
+	</ol>
+ 
 Note: This section is adapted from the assignments provided to us by the Harvard CCB liaison team.
 
 ### Description
