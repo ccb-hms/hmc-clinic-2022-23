@@ -1,4 +1,4 @@
-# Assignment 3 <a name="assignment3"></a>
+# Assignment 3 
 Note: This section is adapted from the assignments provided to us by the Harvard CCB liaison team.
 
 ## Contents
