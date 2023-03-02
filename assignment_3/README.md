@@ -1,6 +1,6 @@
 ## Assignment 3 <a name="assignment3"></a>
 Contents
-	<ol type="a">
+	<ol>
 	<li>Description</li>
 	<li>Tasks</li>
 	</ol>
