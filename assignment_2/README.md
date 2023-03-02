@@ -1,16 +1,16 @@
-# Assignment 2 <a name="assignment2"></a>
+# Assignment 2
 
 Note: This section is adapted from the assignments provided to us by the Harvard CCB liaison team.
 
 ## Contents
 
 <ol>
-<li>Introduction</li>
-<li>Guidance</li>
-<li>Tasks</li>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#guidance">Guidance</a></li>
+<li><a href="#tasks">Tasks</a></li>
 </ol>
 
-## Introduction
+## Introduction <a name="intro"></a>
 
 We will be working with the nycflights13 data set [described in Chapter 13 of R for Data Science](https://r4ds.had.co.nz/relational-data.html#exercises-30).
  
@@ -18,7 +18,7 @@ If you wish to read through it, that chapter provides a nice overview of the sem
  
 You will export the nycflights13 dataset from R and load it into SQL Server running in a container, where you will write SQL queries to answer a variety of questions about the flights, planes, etc.
 
-## Guidance
+## Guidance <a name="guidance"></a>
 
 ### Export the data from R
 
@@ -59,7 +59,7 @@ Pay particular attention to:
 
 Take a look at the data in the original R tibbles and your SQL Server version... does it look right?
 
-## Tasks
+## Tasks <a name="tasks"></a>
 
 Once you have successfully loaded the data tables into SQL Server, you will need to perform a number of `JOIN` and `GROUP` BY aggregate queries to answer the following questions.  The queries to answer these questions can all be written as "one-liners", or you can make use of [temporary tables in TempDB](https://www.sqlservertutorial.net/sql-server-basics/sql-server-temporary-tables/) to store intermediate results.  Sometimes, using temporary tables allows you the opportunity to incrementally solve a problem and sanity-check the results along the way.
  
