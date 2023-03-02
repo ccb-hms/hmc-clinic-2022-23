@@ -1,11 +1,12 @@
 ## Assignment 3 <a name="assignment3"></a>
+Note: This section is adapted from the assignments provided to us by the Harvard CCB liaison team.
 **Contents**
 	<ol>
 	<li>Description</li>
 	<li>Tasks</li>
+	<li>Installing</li>
+	<li>Executing Program</li>
 	</ol>
- 
-Note: This section is adapted from the assignments provided to us by the Harvard CCB liaison team.
 
 ### Description
 
