@@ -3,12 +3,12 @@ Note: This section is adapted from the assignments provided to us by the Harvard
 
 ## Contents
 
-	<ol>
-	<li>Description</li>
-	<li>Tasks</li>
-	<li>Installing</li>
-	<li>Executing Program</li>
-	</ol>
+<ol>
+<li>Description</li>
+<li>Tasks</li>
+<li>Installing</li>
+<li>Executing Program</li>
+</ol>
 
 ## Description
 
