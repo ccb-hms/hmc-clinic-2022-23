@@ -19,14 +19,6 @@ This is the repository for the 2022-2023 Harvey Mudd Clinic Team in collaboratio
 <li> <a href="#assignment3">Assignment 3</a> </li>
 <li> <a href="#assignment4">Assignment 4</a> </li>
 <li> <a href="#assignment5">Assignment 5</a> </li>
-	<ol type="a">
-	<li>Description</li>
-	<li>Anatomy of the MERFISH mouse ileum dataset</li>
-	<li>Installation</li>
-	<li>Scripts</li>
-	<li>Tasks</li>
-	<li>Execution</li>
-	</ol>
 <li> <a href="#authors">Authors</a> </li>
 <li> <a href="#acknowledgements">Acknowledgements</a> </li>
 </ol>
