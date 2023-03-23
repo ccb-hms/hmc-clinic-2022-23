@@ -20,16 +20,16 @@ CREATE TABLE #TempMolecules(
 
 -- Do the bulk import from CSV
 BULK INSERT #TempMolecules FROM '/var/data/merfish_barcodes.csv'
+-- BULK INSERT #TempMolecules FROM '/var/data/merfish_barcodes_head.csv'
 WITH ( 
     FIRSTROW = 2, -- skip the column headers
-    ROWS_PER_BATCH = 467052741, -- however many total rows the data has
     FIELDTERMINATOR = ',', 
     ROWTERMINATOR = '0x0a',
     KEEPNULLS
 );
 
--- we haven't tested this yet
--- This should create the actual table, with a proper identity column
+-- Create the actual table, with a proper identity column
+DROP TABLE IF EXISTS Molecules;
 SELECT IDENTITY(int,1,1) as id,* INTO Molecules FROM #TempMolecules;
 ALTER TABLE Molecules
-    ADD CONSTRAINT id_PK PRIMARY KEY (id)
+    ADD CONSTRAINT Molecules_id_PK PRIMARY KEY (id)
