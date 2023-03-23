@@ -5,12 +5,8 @@ import matplotlib.pyplot as plt
 # Takes the layer and id of a cell and plots its boundaries against the convex hull result
 # layer (int) : The layer of the desired cell/hull, starting from 0
 # id (int) : The cell id of the starting cell/hull, starting from 0
-# showPoints (bool) : Whether you want to plot molecule points or not
-def compare_cell_and_hull(layer, id, showPoints):
-
-    # Load the cell data
-    f = open('poly_per_z.json')
-    data = json.load(f)
+# showCell (bool) : Whether you want to plot the matching cell or not
+def compare_cell_and_hull(layer, id, showCell):
 
     # Load the convex hull data
     hull_csv = pd.read_csv('Layer1ConvexHulls.csv', header=0) 
@@ -39,32 +35,43 @@ def compare_cell_and_hull(layer, id, showPoints):
     x_hull = [lst[0] for lst in hull_points]
     y_hull = [lst[1] for lst in hull_points]
 
-    # Arrays for storing x and y-coordinates
-    x_cell = []
-    y_cell = []
-
-    coordinates = data[layer]['geometries'][id]['coordinates'][0]
-
-    # Fill up the x's and y's
-    for point in coordinates:
-        x_cell.append(point[0])
-        y_cell.append(point[1])
-
-    plt.plot(x_cell,y_cell)
-    plt.plot(x_hull, y_hull)
-
-    if showPoints:
-        # Load the segmentation molecule data
-        points_csv = pd.read_csv('/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/data_analysis/baysor/segmentation/segmentation.csv', header=0)
+    # Load the segmentation molecule data
+    points_csv = pd.read_csv('/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/data_analysis/baysor/segmentation/segmentation.csv', header=0)
         
-        # Find the proper points that (should) make up the convex hull
-        # Need to use id+1 because cell id's start at 1 in this file (0 is reserved for noisy data points)
-        x_molecules = points_csv.loc[(points_csv['z'] == 0) & (points_csv['cell'] == id+1) & (points_csv['is_noise'] == False), ['x']].values.tolist()
-        y_molecules = points_csv.loc[(points_csv['z'] == 0) & (points_csv['cell'] == id+1) & (points_csv['is_noise'] == False), ['y']].values.tolist()
+    # Find the proper points that (should) make up the convex hull
+    # Need to use id+1 because cell id's start at 1 in this file (0 is reserved for noisy data points)
+    x_molecules = points_csv.loc[(points_csv['z'] == 0) & (points_csv['cell'] == id+1) & (points_csv['is_noise'] == False), ['x']].values.tolist()
+    y_molecules = points_csv.loc[(points_csv['z'] == 0) & (points_csv['cell'] == id+1) & (points_csv['is_noise'] == False), ['y']].values.tolist()
 
-        # Add it to the final plot
-        plt.scatter(x_molecules, y_molecules)
+    # Add it to the final plot
+
+    plt.plot(x_hull, y_hull)
+    plt.scatter(x_molecules, y_molecules)
+
+    if showCell:
+
+        # Load the cell data
+        f = open('poly_per_z.json')
+        data = json.load(f)
+
+        # Arrays for storing x and y-coordinates
+        x_cell = []
+        y_cell = []
+
+        coordinates = data[layer]['geometries'][id]['coordinates'][0]
+
+        # Fill up the x's and y's
+        for point in coordinates:
+            x_cell.append(point[0])
+            y_cell.append(point[1])
+
+        plt.plot(x_cell,y_cell)
     
     plt.show()
 
-compare_cell_and_hull(0, 51, True)
+# Run some examples!
+
+compare_cell_and_hull(0, 0, False)
+# compare_cell_and_hull(0, 51, False)
+# compare_cell_and_hull(0, 0, True)
+# compare_cell_and_hull(0, 51, True)
