@@ -27,16 +27,16 @@ CREATE TABLE #TempCellBoundaries(
 
 -- Do the bulk import from CSV
 BULK INSERT #TempCellBoundaries FROM '/var/data/high_resolution_cell_boundaries.csv'
+-- BULK INSERT #TempCellBoundaries FROM '/var/data/high_resolution_cell_boundaries_head.csv'
 WITH ( 
     FIRSTROW = 2, -- skip the column headers
-    ROWS_PER_BATCH = 1027849, -- however many total rows the data has
     FIELDTERMINATOR = ',', 
     ROWTERMINATOR = '0x0a',
     KEEPNULLS
 );
 
--- we haven't tested this yet
--- This should create the actual table, with a proper identity column
+-- Create the actual table, with a proper identity column
+DROP TABLE IF EXISTS CellBoundaries;
 SELECT IDENTITY(int,1,1) as id,* INTO CellBoundaries FROM #TempCellBoundaries;
-ALTER TABLE Molecules
-    ADD CONSTRAINT id_PK PRIMARY KEY (id)
+ALTER TABLE CellBoundaries
+    ADD CONSTRAINT CellBoundaries_id_PK PRIMARY KEY (id)
