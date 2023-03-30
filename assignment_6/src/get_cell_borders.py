@@ -10,11 +10,11 @@ csv_name = "/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/high_resolu
 def create_polygon(x_list, y_list):
 
     # Parse our x and y-lists into lists of ordered floats
-    x = [float(num) for num in x_list.replace(" ", "").split(';')[:-1]]
-    y = [float(num) for num in y_list.replace(" ", "").split(';')[:-1]]
+    x = [float(num) for num in x_list.split(';')[:-1]]
+    y = [float(num) for num in y_list.split(';')[:-1]]
     
     # Combine into one list via zip
-    points = list(zip(x,y))
+    points = zip(x,y)
 
     # Need to get into POLYGON((x[0] y[0], x[1] y[1], ...)) format and return that string
     return 'POLYGON((' + ','.join([f'{x} {y}' for x, y in points]) + '))'
