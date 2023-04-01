@@ -8,7 +8,7 @@ CREATE TABLE #TempMolecules(
     Animal_ID int,
     Bregma float,
     Animal_sex nvarchar(6) NOT NULL,
-    Behavior nvarchar(10),
+    Behavior nvarchar(21),
     Centroid_X float NOT NULL,
     Centroid_Y float NOT NULL,
     Centroid_Z float NOT NULL,
