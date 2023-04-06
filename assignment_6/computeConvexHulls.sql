@@ -8,7 +8,7 @@ CREATE TABLE ConvexHulls (
     z_layer float,
     hull geometry
 )
-
+SET NOCOUNT ON;
 -- Loop through the animals
 DECLARE @a INTEGER;
 SET @a = 1;
@@ -36,9 +36,11 @@ BEGIN
                     INNER JOIN [master].[dbo].[CellNames] as n 
                     ON m.Cell_name = n.cell_name
                     WHERE m.centroid_z = @z AND m.animal_id = @a AND m.bregma = @b AND n.cell_id = @c;
-                INSERT INTO ConvexHulls
-                    SELECT @c as cell_id, @a as animal_id, @b as bregma, @z as z_layer, geometry::ConvexHullAggregate(xy_point) as hull from #CellPoints;
-
+                IF EXISTS(SELECT 1 FROM #CellPoints) -- check if there are any points to make a convex hull out of
+                    BEGIN 
+                    INSERT INTO ConvexHulls
+                        SELECT @c as cell_id, @a as animal_id, @b as bregma, @z as z_layer, geometry::ConvexHullAggregate(xy_point) as hull from #CellPoints;
+                    END;
             SET @c = @c + 1;
             END;
         SET @z = @z + 1.5;
