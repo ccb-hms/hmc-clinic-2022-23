@@ -1,7 +1,7 @@
 Use MouseHypothalamus;
 
-DROP TABLE IF EXISTS ConvexHulls;
-CREATE TABLE ConvexHulls (
+DROP TABLE IF EXISTS ConvexHullsOneAnimalOneBregmaOneZ;
+CREATE TABLE ConvexHullsOneAnimalOneBregmaOneZ (
     cell_id int,
     animal_id int,
     bregma float,
@@ -12,43 +12,41 @@ SET NOCOUNT ON;
 -- Loop through the animals
 DECLARE @a INTEGER;
 SET @a = 1;
-WHILE @a <= 36
-BEGIN
-    -- Loop through the bregma points
+-- WHILE @a <= 36
+-- BEGIN
+--     -- Loop through the bregma points
     DECLARE @b FLOAT;
     SET @b = -0.29;
-    WHILE @b <= 0.26
-    BEGIN
-        -- Loop through the z layers
+--     WHILE @b <= 0.26
+--     BEGIN
+--         -- Loop through the z layers
         DECLARE @z FLOAT;
         SET @z = 0;
-        WHILE @z <=9
-        BEGIN
+--         WHILE @z <=9
+--         BEGIN
             -- Loop through the cell ids (yes, this does needlessly check ids that may not exist)
             DECLARE @c INTEGER;
             SET @c = 1;
             WHILE @c <= 1123833
             BEGIN
                 DROP TABLE IF EXISTS #CellPoints;
-                SELECT point as xy_point, m.Cell_name as Cell_name
+                SELECT xy_point, cell_name
                     INTO #CellPoints
-                    FROM MoleculesWithPoints as m 
-                    INNER JOIN [master].[dbo].[CellNames] as n 
-                    ON m.Cell_name = n.cell_name
-                    WHERE m.centroid_z = @z AND m.animal_id = @a AND m.bregma = @b AND n.cell_id = @c;
+                    FROM MoleculesWithPointsWithCellIds
+                    WHERE centroid_z = @z AND animal_id = @a AND bregma = @b AND cell_id = @c;
                 IF EXISTS(SELECT 1 FROM #CellPoints) -- check if there are any points to make a convex hull out of
                     BEGIN 
-                    INSERT INTO ConvexHulls
+                    INSERT INTO ConvexHullsOneAnimalOneBregmaOneZ
                         SELECT @c as cell_id, @a as animal_id, @b as bregma, @z as z_layer, geometry::ConvexHullAggregate(xy_point) as hull from #CellPoints;
                     END;
             SET @c = @c + 1;
             END;
-        SET @z = @z + 1.5;
-        END;
-    SET @b = @b + 0.05;
-    END;
-SET @a = @a + 1;
-END;
+--         SET @z = @z + 1.5;
+--         END;
+--     SET @b = @b + 0.05;
+--     END;
+-- SET @a = @a + 1;
+-- END;
 
 
 
