@@ -40,7 +40,7 @@ DROP TABLE IF EXISTS #TempCellBoundaries;
 -- import for the original columns in csv
 -- CREATE TABLE #TempCellBoundaries(
 --     feature_uID NVARCHAR(40),
---     feature_ID int,
+--     feature_ID,
 --     fovID int,
 --     is_broken int,
 --     num_joined_features int,
@@ -64,7 +64,7 @@ DROP TABLE IF EXISTS #TempCellBoundaries;
 -- import for the preprocessed csv
 CREATE TABLE #TempCellBoundaries(
     layer tinyint,
-    feature_uid int, 
+    feature_uid NVARCHAR(40), 
     feature_id int,
     geometry_string NVARCHAR(MAX)
 )
