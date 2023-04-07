@@ -1,6 +1,6 @@
 import csv
 
-csv_name = "/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/high_resolution_cell_boundaries_head.csv"
+csv_name = "/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/assignment_6_boundaries/high_resolution_cell_boundaries_head.csv"
 
 # Cols 0 and 1 are the feature_uID and feature_ID respectively
 # Cols 6 through 19 are the alternating x-y pairs
@@ -10,18 +10,18 @@ csv_name = "/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/high_resolu
 def create_polygon(x_string, y_string):
 
     # First split based on NaNs (if any are present)
-    x = [poly.split(';')[:-1] for poly in x_string.replace(' ', '').split('NaN')]
-    y = [poly.split(';')[:-1] for poly in y_string.replace(' ', '').split('NaN')]
+    x_split = [poly.split(';') for poly in x_string.replace(' ', '').split('NaN')]
+    y_split = [poly.split(';') for poly in y_string.replace(' ', '').split('NaN')]
+
+    # Remove any empty strings in our list of lists
+    x = [[point for point in poly if point != ''] for poly in x_split]
+    y = [[point for point in poly if point != ''] for poly in y_split]
 
     all_points = []
 
     for i in range(len(x)):
         if len(x[i]) >= 3 and len(y[i]) >= 3: # Needs to be at least four points total to be a SQL polygon
             # Remove '' ' s at the start of entries between 1 and len - 1
-            if x[i][0] == '':
-                x[i] = x[i][1:] 
-            if y[i][0] == '':
-                y[i] == y[i][1:]
             
             # Duplicate start point on end
             x[i].append(x[i][0])

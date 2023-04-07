@@ -1,11 +1,10 @@
 import csv
 import os
 import matplotlib.pyplot as plt
-import numpy as np
 
-csv_name = "/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/high_resolution_cell_boundaries_head.csv"
+csv_name = "/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/assignment_6_boundaries/high_resolution_cell_boundaries_head.csv"
 
-os.chdir("/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/multipolygon_pics")
+os.chdir("/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/assignment_6_boundaries/polygon_pics")
 
 # Cols 0 and 1 are the feature_uID and feature_ID respectively
 # Cols 6 through 19 are the alternating x-y pairs
@@ -14,38 +13,48 @@ os.chdir("/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/multipolygon_
 # and gets them into the desired POLYGON((X Y, ...)) format for SQL
 def draw_polygon(x_string, y_string, layer, cellid):
 
-    # First split based on NaNs (if any are present)
-    x = [poly.split(';')[:-1] for poly in x_string.replace(' ', '').split('NaN')]
-    y = [poly.split(';')[:-1] for poly in y_string.replace(' ', '').split('NaN')]
+    # First split based on NaNs (if any are present), then split by semi-colons to separate each coordinate
+    x_split = [poly.split(';') for poly in x_string.replace(' ', '').split('NaN')]
+    y_split = [poly.split(';') for poly in y_string.replace(' ', '').split('NaN')]
+
+    # Remove any empty strings in our list of lists
+    x = [[float(point) for point in poly if point != ''] for poly in x_split]
+    y = [[float(point) for point in poly if point != ''] for poly in y_split]
 
 
     # If it's a MULTIPOLYGON, plot it and save as png
     if len(x) == len(y) and len(x) > 1 and len(y) > 1:
         y_points = []
         x_points = []
+        x_start_and_end_points = []
+        y_start_and_end_points = []
+
         for i in range(len(x)):
             if len(x[i]) >= 3 and len(y[i]) >= 3: # Needs to be at least four points total to be a SQL polygon
-                # Remove '' ' s at the start of entries between 1 and len - 1
-                if x[i][0] == '':
-                    x[i] = x[i][1:] 
-                if y[i][0] == '':
-                    y[i] = y[i][1:]
                 
                 # Duplicate start point on end
                 x[i].append(x[i][0])
                 y[i].append(y[i][0])
 
+                # Add start/end points of each polygon to special lists for scattering
+                x_start_and_end_points.append(x[i][0])
+                y_start_and_end_points.append(y[i][0])
+
+                # Add finished polygon to our list of them
                 x_points.append(x[i])
                 y_points.append(y[i])
 
         fig, ax = plt.subplots()
+
+        # Plot all the polygons
         for j in range(len(x_points)):
-            
             plt.plot(x_points[j], y_points[j])
 
+        # Add the start/end points too
+        plt.scatter(x_start_and_end_points, y_start_and_end_points, s=50)
+
+        # Build filename and save out as a png
         name = "layer_" + str(layer) + "_id_" + str(cellid) + ".png"
-        ax.xaxis.set_major_locator(plt.MaxNLocator(5))
-        ax.yaxis.set_major_locator(plt.MaxNLocator(5))
         plt.savefig(name)
         plt.close()
 
