@@ -20,8 +20,7 @@ def create_polygon(x_string, y_string):
     all_points = []
 
     for i in range(len(x)):
-        if len(x[i]) >= 3 and len(y[i]) >= 3: # Needs to be at least four points total to be a SQL polygon
-            # Remove '' ' s at the start of entries between 1 and len - 1
+        if len(set(x[i])) >= 3 and len(set(y[i])) >= 3: # Needs to have at least three unique points to be a SQL polygon
             
             # Duplicate start point on end
             x[i].append(x[i][0])
