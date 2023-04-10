@@ -28,3 +28,8 @@ SELECT IDENTITY(int,1,1) as id, m.id as molecule_id, m.gene_name, m.cell_name, n
 
 ALTER TABLE MoleculesWithPointsWithCellIdsHead
     ADD CONSTRAINT MoleculesWithPointsWithCellIdsHead_id_PK PRIMARY KEY (id);
+
+CREATE SPATIAL INDEX MoleculesWithPointsWithCellIdsHeadInd ON
+   [MouseHypothalamus].[dbo].[MoleculesWithPointsWithCellIdsHead](xy_point)
+   WITH (GRIDS = (HIGH, HIGH, HIGH, HIGH), 
+        BOUNDING_BOX = (XMIN = -6000,YMIN = -6000, XMAX = 6000, YMAX = 6000)); -- rounding up to +- 6000
