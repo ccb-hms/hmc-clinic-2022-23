@@ -11,13 +11,15 @@ CREATE TABLE ConvexHullsAnimal1Bregma1Z0 (
 SET NOCOUNT ON;
 -- Loop through the animals
 DECLARE @a INTEGER;
-SET @a = 1;
+-- SET @a = 1;
 -- WHILE @a <= 36
+SET @a = 4;
 -- BEGIN
 --     -- Loop through the bregma points
     DECLARE @b FLOAT;
-    SET @b = -0.29;
+    -- SET @b = -0.29;
 --     WHILE @b <= 0.26
+    SET @b = -0.14;
 --     BEGIN
 --         -- Loop through the z layers
         DECLARE @z FLOAT;
@@ -27,7 +29,8 @@ SET @a = 1;
             -- Loop through the cell ids (yes, this does needlessly check ids that may not exist)
             DECLARE @c INTEGER;
             SET @c = 1;
-            WHILE @c <= 1123833
+            -- WHILE @c <= 1123833
+            WHILE @c <= 1037
             BEGIN
                 DROP TABLE IF EXISTS #CellPoints;
                 SELECT xy_point, cell_name
