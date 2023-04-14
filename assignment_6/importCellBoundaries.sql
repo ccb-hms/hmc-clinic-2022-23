@@ -37,7 +37,7 @@ CREATE TABLE #TempCellBoundaries(
 
 -- Do the bulk import from CSV
 -- BULK INSERT #TempCellBoundaries FROM '/var/data/cell_boundaries_reformatted.csv'
-BULK INSERT #TempCellBoundaries FROM '/var/data/cell_boundaries_reformatted_head.csv' -- first 1000 rows of reformatted data
+BULK INSERT #TempCellBoundaries FROM '/var/data/cell_boundaries_reformatted.csv' -- first 1000 rows of reformatted data
 -- BULK INSERT #TempCellBoundaries FROM '/var/data/high_resolution_cell_boundaries.csv' -- original data
 -- BULK INSERT #TempCellBoundaries FROM '/var/data/high_resolution_cell_boundaries_head.csv' -- first 1000 rows of original data
 WITH ( 
@@ -49,10 +49,10 @@ WITH (
 
 -- Create the actual table, with a proper identity column
 
-DROP TABLE IF EXISTS CellBoundariesHeadWithGeometryStrings;
-SELECT IDENTITY(int,1,1) as id,* INTO CellBoundariesHeadWithGeometryStrings FROM #TempCellBoundaries;
-ALTER TABLE CellBoundariesHeadWithGeometryStrings
-    ADD CONSTRAINT CellBoundariesHeadWithGeometryStrings_id_PK PRIMARY KEY (id);
+DROP TABLE IF EXISTS CellBoundariesWithGeometryStrings;
+SELECT IDENTITY(int,1,1) as id,* INTO CellBoundariesWithGeometryStrings FROM #TempCellBoundaries;
+ALTER TABLE CellBoundariesWithGeometryStrings
+    ADD CONSTRAINT CellBoundariesWithGeometryStrings_id_PK PRIMARY KEY (id);
 
 -- DROP TABLE IF EXISTS CellBoundariesWithGeometryStrings;
 -- SELECT IDENTITY(int,1,1) as id,* INTO CellBoundariesWithGeometryStrings FROM #TempCellBoundaries;
