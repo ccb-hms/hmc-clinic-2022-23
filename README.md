@@ -14,6 +14,7 @@ This is the repository for the 2022-2023 Harvey Mudd Clinic Team in collaboratio
 <li> <a href="#assignment3">Assignment 3</a> </li>
 <li> <a href="#assignment4">Assignment 4</a> </li>
 <li> <a href="#assignment5">Assignment 5</a> </li>
+<li> <a href="#assignment6">Assignment 6</a> </li>
 <li> <a href="#authors">Authors</a> </li>
 <li> <a href="#acknowledgements">Acknowledgements</a> </li>
 </ol>
@@ -59,8 +60,14 @@ For a breakdown of each step of assignment 4, see the [assignment 4 README.](ass
 ## Assignment 5 <a name="assignment5"></a>
 
 Assignment 5 finally brings our attention to spatial transcriptomics data in SQL Server. We are given multiple subtasks, such as creating a new gene-cell-molecule count table, reshaping that table into a gene expression matrix, and creating convex hulls around every molecule in a given cell. \
-For a breakdown of each step of assignment 5, see the [assignment 5 README.](assignment_4/README.md)
+For a breakdown of each step of assignment 5, see the [assignment 5 README.](assignment_5/README.md)
 You may also follow along in our [assignment 5 notebook.](Notebooks/Assignment5NotebookSummarized.ipynb)
+
+## Assignment 6 <a name="assignment6"></a>
+
+Assignment 6 is a continuation of the ideas of Assignment 5, but with a significantly larger dataset of tissue images from 26 mice hypothalamuses. This dataset is currently not publically available but was provided for our use. With this larger dataset, we repeated the objectives of Assignment 5 on an institutional computer cluster: we created a molecule count table, and generated convex hulls around molecules belonging to cells in the first z-slice.  \
+For a breakdown of each step of assignment 6, see the [assignment 6 README.](assignment_6/README.md)
+You may also follow along in our [assignment 6 notebook.](Notebooks/Assignment6Notebook.ipynb)
 
 ## Authors <a name="authors"></a>
 
