@@ -96,7 +96,5 @@ Note: This section is adapted from the assignments provided to us by the Harvard
 
 ## Execution <a name="exec"></a>
 
-To run our code for this assignment, follow along in our [Notebook](Notebooks/Assignment5NotebookSummarized.ipynb).
-
-(TODO: add details with how to run using scripts)
+To run our code for this assignment, follow along in our [Notebook](Notebooks/Assignment5NotebookSummarized.ipynb). (The other notebooks are intended as a catalog of our thought process and can be ignored.)
 
