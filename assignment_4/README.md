@@ -8,6 +8,7 @@ Note: This section is adapted from the assignments provided to us by the Harvard
 <li><a href="#setup">Setup</a></li>
 <li><a href="#data">Data</a></li>
 <li><a href="#exercises">Exercises</a></li>
+<li><a href="work">Our work</a></li>
 </ol>
   
 ## Background <a name="background"></a>
@@ -165,3 +166,6 @@ Free Answer:
 
 2. Are there any data quality issues with the tables that you accounted for in your queries?
 
+## Our work <a name="work"></a>
+
+Our writeup began its life as a Google Doc, so we've included a pdf of that, as it includes images that might be useful. We've also translated this work into a SQL notebook for your convenience!

@@ -8,6 +8,7 @@ Note: This section is adapted from the assignments provided to us by the Harvard
 <li><a href="#intro">Introduction</a></li>
 <li><a href="#guidance">Guidance</a></li>
 <li><a href="#tasks">Tasks</a></li>
+<li><a href="#work">Our work</a></li>
 </ol>
 
 ## Introduction <a name="intro"></a>
@@ -73,4 +74,6 @@ Along with temporary tables, it is often useful to [alias table names](https://e
 <li>Which airline experienced the highest average temperature at departure time of its respective flights?</li>
 </ol>
 
-(TODO: add our sample code for our solution to the assignment)
+## Our work <a name="work"></a>
+
+Check out the SQL notebook in this folder!

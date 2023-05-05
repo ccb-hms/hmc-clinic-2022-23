@@ -7,7 +7,7 @@ Note: This section is adapted from the assignments provided to us by the Harvard
 <li><a href="#desc">Description</a></li>
 <li><a href="#tasks">Tasks</a></li>
 <li><a href="#installing">Installing</a></li>
-<li><a href="#exec">Executing Program</a></li>
+<li><a href="#exec">Our work</a></li>
 </ol>
 
 ## Description <a name="desc"></a>
@@ -26,7 +26,7 @@ c) all pericytes with non-zero expression of the Ace2 gene.
 
 The segmented expression data can be downloaded from [datadryad](https://doi.org/10.5061/dryad.8t8s248).
 
-## Executing program <a name="exec"></a>
+## Our work<a name="exec"></a>
 
-(TODO: add our sample execution code)
+Just run our companion notebook `Assignment3Notebook.ipynb`!
 

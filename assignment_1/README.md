@@ -7,6 +7,7 @@ Note: This section is adapted from the assignments provided to us by the Harvard
 <li><a href="#desc">Description</a></li>
 <li><a href="#coursera">Coursera</a></li>
 <li><a href="#labAssign">Running lab assignments in SQL Server</a></li>
+<li><a href="#work">Our work</a></li>
 
 ## Description <a name="desc"></a>
 
@@ -48,3 +49,7 @@ GO
 Execute the statements in the scripts one-at-a-time in ADS.  The statements to DROP the tables will fail the first time you run the script.  MS's dialect of SQL, called Transact-SQL or T-SQL, has [syntactic sugar to work around this](https://learn.microsoft.com/en-us/sql/t-sql/statements/drop-table-transact-sql?view=sql-server-ver16) if you'd like to experiment.
 
 Explore the ADS UI  to view table structure, etc. as they do in the IBM tool in the lab.
+
+## Our work <a name="work"></a>
+
+Check out the SQL notebook in this folder!
