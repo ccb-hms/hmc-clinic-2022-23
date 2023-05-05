@@ -1,7 +1,7 @@
 Use MouseHypothalamus;
 
-DROP TABLE IF EXISTS ConvexHullsAnimal1Bregma1Z0;
-CREATE TABLE ConvexHullsAnimal1Bregma1Z0 (
+DROP TABLE IF EXISTS ConvexHullsAnimal4BregmaM14Z0;
+CREATE TABLE ConvexHullsAnimal4BregmaM14Z0 (
     cell_id int,
     animal_id int,
     bregma float,
@@ -30,16 +30,16 @@ SET @a = 4;
             DECLARE @c INTEGER;
             SET @c = 1;
             -- WHILE @c <= 1123833
-            WHILE @c <= 1037
+            WHILE @c <= 6048
             BEGIN
                 DROP TABLE IF EXISTS #CellPoints;
                 SELECT xy_point, cell_name
                     INTO #CellPoints
-                    FROM MoleculesWithPointsWithCellIdsHead
+                    FROM MoleculesWithPointsWithCellIds
                     WHERE feature_id = @c AND centroid_z = @z AND animal_id = @a AND bregma = @b;
                 IF EXISTS(SELECT 1 FROM #CellPoints) -- check if there are any points to make a convex hull out of
                     BEGIN 
-                    INSERT INTO ConvexHullsAnimal1Bregma1Z0
+                    INSERT INTO ConvexHullsAnimal4BregmaM14Z0
                         SELECT @c as cell_id, @a as animal_id, @b as bregma, @z as z_layer, geometry::ConvexHullAggregate(xy_point) as hull from #CellPoints;
                     END;
             SET @c = @c + 1;
