@@ -49,6 +49,15 @@ The dataset can be obtained from the official [datadryad data publication](https
 
 Here follows a list of the source code we've included for this assignment.
 
+* [compare_convex_hulls.py](https://github.com/kunyanglu/harvard-ccb-hmc-clinic/blob/main/assignment_5/src/compare_convex_hulls.py) - 
+Python script for comparing the points from the original data with our computed convex hulls.
+
+* [convexHullsAllLayers.sql](https://github.com/kunyanglu/harvard-ccb-hmc-clinic/blob/main/assignment_5/src/convexHullsAllLayers.sql) -
+SQL script for computing convex hulls for every cell in every z-layer.
+
+* [createMoleculesAndCellsWithGeometries.sql](https://github.com/kunyanglu/harvard-ccb-hmc-clinic/blob/main/assignment_5/src/createMoleculesAndCellsWithGeometries.sql) - 
+SQL script for timing spatial interesect queries for all layers.
+
 * [find_invalid_cells.py](https://github.com/kunyanglu/harvard-ccb-hmc-clinic/blob/main/assignment_5/src/find_invalid_cells.py) - 
 Python script for identifying cells whose polygon representation is not a simple polygon
 
@@ -75,6 +84,9 @@ SQL script for parsing the imported CellPolygons table (with polygons represente
 
 * [processMoleculesPoints.sql](https://github.com/kunyanglu/harvard-ccb-hmc-clinic/blob/main/assignment_5/src/processMoleculesPoints.sql) -
 SQL script for parsing the imported Molecules table (with points represented as strings) and creating a geometry type point column
+
+* [processSegmentationPoints.sql](https://github.com/kunyanglu/harvard-ccb-hmc-clinic/blob/main/assignment_5/src/processSegmentationPoints.sql) - 
+SQL script that preprocesses segmentation.csv after the bulk insert
 
 * [visualize_cells.py](https://github.com/kunyanglu/harvard-ccb-hmc-clinic/blob/main/assignment_5/src/visualize_cells.py)
 Python script that uses `poly_per_z.json` to draw plots of cell polygons from the Baysor segmentation
