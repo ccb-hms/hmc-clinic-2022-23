@@ -96,5 +96,6 @@ Note: This section is adapted from the assignments provided to us by the Harvard
 
 ## Execution <a name="exec"></a>
 
-To run our code for this assignment, follow along in our [Notebook](Notebooks/Assignment5NotebookSummarized.ipynb). (The other notebooks are intended as a catalog of our thought process and can be ignored.)
+To run our code for this assignment, follow along in our [Summarized Notebook](Notebooks/Assignment5NotebookSummarized.ipynb). 
+The other notebooks (Assignment5NotebookPart1 and Assignment5NotebookPart2) are intended as a catalog of our thought process and can be ignored.
 
