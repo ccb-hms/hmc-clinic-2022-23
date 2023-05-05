@@ -1,4 +1,4 @@
-# Assignment 5 <a name="assignment5"></a>
+# Assignment 6 <a name="assignment6"></a>
 
 Note: Some portions of this README are adapted from the assignments provided to us by the Harvard CCB liaison team.
 
@@ -43,6 +43,7 @@ geometry operations in the spatial SQL setting.
 <ul>
   <li> mRNA molecule data: ~500 M observations for 135 genes (15 GB csv file) </li>
   <li> Cell polygons obtained from Watershed segmentation: ~1 M cells from 36 mice (16 female, 20 male, 7 GB csv file). </li>
+</ul>
 </ul>
 
 ## Scripts <a name="scripts"></a>
