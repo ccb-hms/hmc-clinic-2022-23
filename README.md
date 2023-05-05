@@ -82,6 +82,8 @@ You may also follow along in our [assignment 6 notebook.](Notebooks/Assignment6N
 
 ## Acknowledgments <a name="acknowledgements"></a>
 
+Tim Buchheim
+
 Ludwig Geistlinger
 
 Robert Gentleman
@@ -90,10 +92,12 @@ Rafael Goncalves
 
 Tyrone Lee
 
+Jeffrey Moffitt
+
 Nathan Palmer
 
 Sunil Poudel
 
 Sam Pullman
 
-Jeffrey Moffitt
+Chris Stone
