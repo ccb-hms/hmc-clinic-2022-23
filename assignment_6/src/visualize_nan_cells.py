@@ -2,8 +2,10 @@ import csv
 import os
 import matplotlib.pyplot as plt
 
+# Points to MERFISH data with NaNs in it
 csv_name = "/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/assignment_6_boundaries/high_resolution_cell_boundaries_head.csv"
 
+# Change file location for pictures as appropriate!
 os.chdir("/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/assignment_6_boundaries/polygon_pics")
 
 # Cols 0 and 1 are the feature_uID and feature_ID respectively

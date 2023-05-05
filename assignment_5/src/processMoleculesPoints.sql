@@ -8,6 +8,7 @@ ALTER TABLE MoleculesWithPoints
         point geometry;
 
 UPDATE MoleculesWithPoints
+    -- this cast makes the layers go from 0, 1, 2, ...
     SET z_layer = CAST(ROUND(z_pixel /13.76819064, 0) AS int) + 1;
 
 UPDATE MoleculesWithPoints

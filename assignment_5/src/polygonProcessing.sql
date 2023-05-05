@@ -23,5 +23,3 @@ SELECT *
         SELECT Top(1) *
         FROM [MouseIleum].[dbo].[MoleculesLayer0]) AS b
     WHERE @PolygonFromPoints.STIntersects(geometry::Point(b.[x_pixel], b.[y_pixel],0)) = 1
-
--- Polygon invalidity issue? 

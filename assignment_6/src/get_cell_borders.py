@@ -1,5 +1,10 @@
 import csv
 
+### This code takes in MERFISH cell boundaries data (from Moffitt et al, stored on 
+### the Harvard CCB AWS S3 bucket) and processes it appropriately to reach the 
+### POLYGON/MULTIPOLYGON syntax that SQL can bulk insert and convert with ST_GeomFromText
+
+# Change this name to the proper csv location as necessary
 csv_name = "/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/assignment_6_boundaries/high_resolution_cell_boundaries_head.csv"
 
 # Cols 0 and 1 are the feature_uID and feature_ID respectively

@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 # layer (int) : The layer of the desired cell/hull, starting from 0
 # id (int) : The cell id of the starting cell/hull, starting from 0
 # showCell (bool) : Whether you want to plot the matching cell or not
-def compare_cell_and_hull(layer, id, showCell):
+def compare_cell_and_points(layer, id, showCell):
 
-    # Load the convex hull data
+    # Load the convex hull data (stored as a csv of unprocessed SQL POLYGONS)
     hull_csv = pd.read_csv('Layer1ConvexHulls.csv', header=0) 
 
     # Find the right row in the table
@@ -36,6 +36,7 @@ def compare_cell_and_hull(layer, id, showCell):
     y_hull = [lst[1] for lst in hull_points]
 
     # Load the segmentation molecule data
+    # Change this location as needed!
     points_csv = pd.read_csv('/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/data_analysis/baysor/segmentation/segmentation.csv', header=0)
         
     # Find the proper points that (should) make up the convex hull
@@ -70,8 +71,7 @@ def compare_cell_and_hull(layer, id, showCell):
     plt.show()
 
 # Run some examples!
-
-compare_cell_and_hull(0, 0, False)
+compare_cell_and_points(0, 0, False)
 # compare_cell_and_hull(0, 51, False)
 # compare_cell_and_hull(0, 0, True)
 # compare_cell_and_hull(0, 51, True)

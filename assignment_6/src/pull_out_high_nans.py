@@ -1,5 +1,9 @@
 import csv
 
+### This code finds all of the cells in the MERFISH cell boundaries data with high
+### numbers of NaN's
+
+# Change this to point to your cell boundaries csv!
 csv_name = "/data/harvardccb22/data-mouse-hypothalamus/high_resolution_cell_boundaries.csv"
 
 
@@ -24,6 +28,7 @@ with open(csv_name) as input:
                 if len(x) > 0 and len(y) > 0: 
                     percent = ((x.count('NaN') + y.count('NaN'))/(len(x) + len(y)))*100
 
+                    # Add to new csv if the percentage exceeds 10%
                     if percent > 10:
                         x.append(x[0])
                         y.append(x[0])

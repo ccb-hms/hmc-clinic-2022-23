@@ -4,7 +4,6 @@ DECLARE @json VARCHAR(MAX)
 SELECT @json = BulkColumn
   FROM OPENROWSET (BULK '/var/data/data_analysis/baysor/segmentation/poly_per_z.json', SINGLE_CLOB) as j
 
--- SELECT * FROM OPENJSON(@json) 
 -- get appropriate columns from this
 SELECT z_id as z, g.id as cell, c.x, c.y FROM OPENJSON(@json)
 CROSS APPLY OPENJSON(@json)
@@ -31,7 +30,6 @@ WITH (
     geometries NVARCHAR(MAX) AS JSON,
     type nvarchar(18)) as poly;
 
--- TODO then save as a file 
 USE MouseIleum
 CREATE TABLE [dbo].[Cells](
   z TINYINT,

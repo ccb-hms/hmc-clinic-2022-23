@@ -2,7 +2,10 @@ import json
 import pandas as pd
 import matplotlib.pyplot as plt
 
+### This code visualizes convex hulls pulled out of SQL 
+### as POLYGONS, MULTIPOLYGONS, and LINES (using ST_GeomToText)
 
+### CHANGE THESE CSV LOCATIONS AS NEEDED!
 # Load the convex hull data
 hull_csv = pd.read_csv('/Users/clinic2022/Desktop/convexhullsA6.csv', header=0) 
 # Load the cell segmentation data

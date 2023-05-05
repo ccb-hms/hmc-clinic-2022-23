@@ -6,6 +6,7 @@ from skimage import io
 def draw_cell(layer, id):
 
     # Load the data
+    # Change this file location as necessary!
     f = open('poly_per_z.json')
     data = json.load(f)
 
@@ -19,12 +20,8 @@ def draw_cell(layer, id):
     for point in coordinates:
         x.append(point[0])
         y.append(point[1])
-    
-    # im = io.imread('/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/data_analysis/cellpose/cell_boundaries/results/cellpose_dapi.tif')
 
     plt.plot(x,y)
-    # plt.imshow(im[layer], cmap="gray")
-    # print(coordinates)
     plt.show()
 
 draw_cell(0,0)

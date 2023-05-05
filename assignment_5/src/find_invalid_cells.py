@@ -50,6 +50,7 @@ def check_cells(savePics):
 
     # Save all the weird ones (not straight lines) as images if we want
     if (savePics):
+        # Change this file directory for images if you wish
         os.chdir('/Users/cgcouto/Downloads/data_release_baysor_merfish_gut/weirdcells')
 
         for cell in badOnes:

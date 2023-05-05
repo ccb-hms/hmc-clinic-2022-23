@@ -2,6 +2,10 @@ import csv
 from collections import Counter
 import numpy as np
 
+### This code finds the number of nan's in the original Moffitt et al. cell boundaries data
+### from Harvard CCB's AWS S3 bucket
+
+### Point csv_name to csv of MERFISH cell boundaries you want to analyze
 csv_name = "/data/harvardccb22/data-mouse-hypothalamus/high_resolution_cell_boundaries.csv"
 null_percents = []
 
